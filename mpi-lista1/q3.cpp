@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
         int recvbuf[DATA_COUNT];
         MPI_Recv(recvbuf, DATA_COUNT, MPI_INT, MASTER, rank, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
+        std::cout << rank << " - ";
         std::cout << rank << '/' << size << ": ";
         printVector(recvbuf, DATA_COUNT);
     }
