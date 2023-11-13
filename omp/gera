@@ -1,1 +1,1 @@
-for ((i=0;i<10000000;i++)); do printf "%d\n" $RANDOM; done > rand.txt
+for ((i=0;i<10000000;i++)); do printf "%08d\n" $RANDOM; done > rand.txt
