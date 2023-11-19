@@ -1,0 +1,16 @@
+0. Install dependencies:
+
+pip install grpcio grpcio-tools
+
+1. Compile the Protocol Buffer file:
+
+python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. both.proto
+
+2. Start the server
+
+python3 server.py
+
+3. Run the client:
+
+python3 client.py
+

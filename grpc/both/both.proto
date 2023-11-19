@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package both;
+
+service BothService {
+  rpc GetSquare (SquareRequest) returns (SquareResponse);
+  rpc GetCube (CubeRequest) returns (CubeResponse);
+}
+
+message SquareRequest {
+    int32 number = 1;
+}
+
+message SquareResponse {
+    int32 result = 1;
+}
+
+message CubeRequest {
+  int32 number = 1;
+}
+
+message CubeResponse {
+  int32 result = 1;
+}
