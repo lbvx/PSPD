@@ -8,4 +8,4 @@ for i in range(300000):
     if a2.count(i) == 1:
         a2.remove(i)
 
-print(a2) # 37501 ta duplicado
+print(a2)
