@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // CUDA kernel to add two vectors
 __global__ void vectorAddition(float *a, float *b, float *result, int size) {
@@ -10,7 +11,7 @@ __global__ void vectorAddition(float *a, float *b, float *result, int size) {
 
 int main() {
     // Size of the vectors
-    int size = 1000000;
+    int size = 100000000;
 
     // Allocate memory for vectors on the host
     float *h_a, *h_b, *h_result;
@@ -20,8 +21,8 @@ int main() {
 
     // Initialize vectors on the host
     for (int i = 0; i < size; ++i) {
-        h_a[i] = (float) i;
-        h_b[i] = (float) i * 2.0f;
+        h_a[i] = (float) i * 1e-10f;
+        h_b[i] = (float) i * 2.0e-10f;
     }
 
     // Allocate memory for vectors on the device
@@ -46,7 +47,7 @@ int main() {
 
     // Verify the results
     for (int i = 0; i < size; ++i) {
-        printf("%f ", h_result[i]);
+        // printf("%f ", h_result[i]);
     }
     printf("\n");
 
